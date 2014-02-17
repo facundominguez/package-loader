@@ -1,0 +1,36 @@
+name:               package-loader
+version:            1.5.4.0
+homepage:           https://github.com/tweag/package-loader
+synopsis:           Dynamic linking of Haskell packages
+description:        Dynamic linking of Haskell packages
+                    including dependency chasing and package resolution.
+                    .
+                    This package has been split from the plugins package to
+                    remove the package dependencies that are not necessary
+                    for the task.
+
+category:           System
+license:            BSD3
+License-file:       LICENSE
+maintainer:         Facundo Domínguez <facundo.dominguez@tweag.io>
+cabal-version:      >= 1.6
+build-type:         Configure
+Tested-with:        GHC >= 6.12.1
+extra-source-files: config.guess, config.h.in, config.mk.in, config.sub,
+                    configure, configure.ac, install.sh
+
+library
+    exposed-modules:
+            System.Loader.Package,
+            System.Loader.Package.Constants,
+            System.Loader.Package.Env,
+            System.Loader.Package.ZEncoding
+
+    extensions:           CPP,
+                          ForeignFunctionInterface
+    ghc-options:          -Wall -funbox-strict-fields -fno-warn-missing-signatures
+    hs-source-dirs:       src
+    build-depends:        base  >= 4 && < 5,
+                          Cabal >= 1.6,
+                          containers,
+                          directory
