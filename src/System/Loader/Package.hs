@@ -23,7 +23,9 @@
 
 -- | An interface to the GHC runtime's dynamic linker, providing runtime
 -- loading and linking of Haskell packages and object files.
-
+--
+-- Call initLinker first of all.
+--
 module System.Loader.Package (
 
         initLinker      -- start it up
@@ -273,5 +275,6 @@ foreign import ccall unsafe "resolveObjs"
 foreign import ccall unsafe "addDLL"
    c_addDLL :: CString -> IO CString
 
+-- | Initializes the RTS linker.
 foreign import ccall unsafe "initLinker"
    initLinker :: IO ()
