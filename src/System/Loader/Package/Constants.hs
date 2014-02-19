@@ -20,7 +20,7 @@
 
 module System.Loader.Package.Constants where
 
-#include "../../../config.h"
+#include "config.h"
 
 sysPkgSuffix = ".o"
 #if defined(CYGWIN) || defined(__MINGW32__)

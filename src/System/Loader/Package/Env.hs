@@ -41,7 +41,7 @@ module System.Loader.Package.Env (
 
    ) where
 
-#include "../../../config.h"
+#include "config.h"
 
 import System.Loader.Package.Constants ( sysPkgSuffix )
 

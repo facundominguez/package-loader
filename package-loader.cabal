@@ -29,6 +29,7 @@ library
     extensions:           CPP,
                           ForeignFunctionInterface
     ghc-options:          -Wall -funbox-strict-fields -fno-warn-missing-signatures
+    include-dirs:         .
     hs-source-dirs:       src
     build-depends:        base  >= 4 && < 5,
                           Cabal >= 1.6,
